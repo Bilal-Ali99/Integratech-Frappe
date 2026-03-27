@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --brand:          #1A2B4A;
+  --brand-mid:      #243859;
+  --brand-accent:   #3B82F6;
+  --brand-accent-s: rgba(59,130,246,0.12);
+  --brand-border:   rgba(255,255,255,0.07);
+  --brand-muted:    rgba(255,255,255,0.06);
+  --text-primary:   #FFFFFF;
+  --text-secondary: rgba(210,220,240,0.85);
+  --text-muted:     rgba(180,196,224,0.5);
+  --page-bg:        #EEF2F8;
+  --card-bg:        #FFFFFF;
+  --card-border:    #E8EDF5;
+}
+
+/* ─── Global font ───────────────────────────────────────────── */
+body,
+.frappe-app,
+.page-container,
+.form-page,
+.list-page {
+  font-family: 'DM Sans', sans-serif !important;
+  background: var(--page-bg) !important;
+}
+
+/* ─── SIDEBAR BACKGROUND ────────────────────────────────────── */
+.desk-sidebar,
+.layout-side-section {
+  background: var(--brand) !important;
+  border-right: 1px solid var(--brand-border) !important;
+  width: 260px !important;
+}
+
+/* ─── SIDEBAR — ALL TEXT WHITE ──────────────────────────────── */
+.desk-sidebar,
+.desk-sidebar a,
+.desk-sidebar span,
+.desk-sidebar p,
+.desk-sidebar .sidebar-item,
+.desk-sidebar .sidebar-item a,
+.desk-sidebar .standard-sidebar-item,
+.desk-sidebar .standard-sidebar-item a,
+.desk-sidebar .module-title,
+.desk-sidebar .item-anchor,
+.desk-sidebar .sidebar-item-label,
+.desk-sidebar .desk-sidebar-item,
+.desk-sidebar .desk-sidebar-item a {
+  color: var(--text-secondary) !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+}
+
+/* Sidebar item layout */
+.desk-sidebar .sidebar-item,
+.desk-sidebar .standard-sidebar-item,
+.desk-sidebar .desk-sidebar-item {
+  border-radius: 8px !important;
+  margin: 1px 8px !important;
+  padding: 8px 12px !important;
+  transition: background 0.15s !important;
+  border: 1px solid transparent !important;
+}
+
+/* Hover state */
+.desk-sidebar .sidebar-item:hover,
+.desk-sidebar .standard-sidebar-item:hover,
+.desk-sidebar .desk-sidebar-item:hover {
+  background: var(--brand-muted) !important;
+}
+
+.desk-sidebar .sidebar-item:hover a,
+.desk-sidebar .sidebar-item:hover span,
+.desk-sidebar .standard-sidebar-item:hover a,
+.desk-sidebar .standard-sidebar-item:hover span,
+.desk-sidebar .desk-sidebar-item:hover a,
+.desk-sidebar .desk-sidebar-item:hover span {
+  color: var(--text-primary) !important;
+}
+
+/* Active / selected state */
+.desk-sidebar .sidebar-item.selected,
+.desk-sidebar .sidebar-item.active,
+.desk-sidebar .standard-sidebar-item.selected,
+.desk-sidebar .standard-sidebar-item.active,
+.desk-sidebar .desk-sidebar-item.selected,
+.desk-sidebar .desk-sidebar-item.active {
+  background: var(--brand-accent-s) !important;
+  border-color: rgba(59,130,246,0.2) !important;
+}
+
+.desk-sidebar .sidebar-item.selected a,
+.desk-sidebar .sidebar-item.selected span,
+.desk-sidebar .sidebar-item.active a,
+.desk-sidebar .sidebar-item.active span,
+.desk-sidebar .standard-sidebar-item.selected a,
+.desk-sidebar .standard-sidebar-item.selected span,
+.desk-sidebar .standard-sidebar-item.active a,
+.desk-sidebar .standard-sidebar-item.active span {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+/* Section group labels */
+.desk-sidebar .sidebar-label,
+.desk-sidebar .sidebar-group-title,
+.desk-sidebar .list-item-name.text-muted,
+.desk-sidebar .module-category {
+  color: var(--text-muted) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  padding: 10px 20px 4px !important;
+}
+
+/* Sidebar icons — white stroke, no black fill */
+.desk-sidebar svg path,
+.desk-sidebar svg rect,
+.desk-sidebar svg circle,
+.desk-sidebar svg polyline,
+.desk-sidebar svg line {
+  stroke: var(--text-secondary) !important;
+  fill: none !important;
+}
+
+.desk-sidebar .sidebar-item.selected svg path,
+.desk-sidebar .sidebar-item.active svg path,
+.desk-sidebar .standard-sidebar-item.selected svg path,
+.desk-sidebar .standard-sidebar-item.active svg path {
+  stroke: #60A5FA !important;
+}
+
+/* ─── TOPBAR / NAVBAR ───────────────────────────────────────── */
+.navbar,
+header.navbar {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  height: 56px !important;
+  box-shadow: none !important;
+}
+
+.navbar .nav > li > a,
+.navbar .navbar-nav > li > a {
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.navbar .nav > li > a:hover {
+  color: #1A2B4A !important;
+  background: #F8FAFC !important;
+}
+
+.navbar .search-bar input,
+.navbar .awesome-bar input {
+  border-radius: 8px !important;
+  border: 1px solid #E2E8F0 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+  background: #F8FAFC !important;
+}
+
+/* ─── BUTTONS ───────────────────────────────────────────────── */
+.btn-primary,
+.btn.btn-primary {
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  transition: background 0.15s !important;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+  background: var(--brand-mid) !important;
+  border-color: var(--brand-mid) !important;
+}
+
+.btn-secondary,
+.btn.btn-secondary,
+.btn-default,
+.btn.btn-default {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  border: 1px solid #E2E8F0 !important;
+  background: white !important;
+  color: #475569 !important;
+}
+
+.btn-secondary:hover,
+.btn-default:hover { background: #F8FAFC !important; }
+
+/* ─── PAGE TITLES & BREADCRUMBS ─────────────────────────────── */
+.page-title,
+.title-text,
+h1.page-title {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  font-size: 20px !important;
+}
+
+.breadcrumb { font-size: 13px !important; font-family: 'DM Sans', sans-serif !important; }
+.breadcrumb .breadcrumb-item a { color: #94A3B8 !important; }
+.breadcrumb .breadcrumb-item.active { color: #1E293B !important; font-weight: 500 !important; }
+
+/* ─── LIST VIEW ─────────────────────────────────────────────── */
+.frappe-list,
+.list-page .page-content {
+  background: white !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--card-border) !important;
+  overflow: hidden !important;
+}
+
+.list-row,
+.doclist-row {
+  border-bottom: 1px solid #F8FAFC !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+  transition: background 0.12s !important;
+}
+
+.list-row:hover,
+.doclist-row:hover { background: #FAFBFD !important; }
+
+.list-row-head,
+.list-header {
+  background: #F8FAFC !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #94A3B8 !important;
+}
+
+/* ─── FORM VIEW ─────────────────────────────────────────────── */
+.page-body .form-layout {
+  background: white !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--card-border) !important;
+  padding: 24px !important;
+}
+
+.frappe-control .control-label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: #94A3B8 !important;
+}
+
+.form-section .section-head {
+  background: #F8FAFC !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 10px 16px !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #94A3B8 !important;
+}
+
+.frappe-control input,
+.frappe-control select,
+.frappe-control textarea {
+  border-radius: 8px !important;
+  border: 1px solid #E2E8F0 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+  color: #334155 !important;
+  transition: border-color 0.15s !important;
+}
+
+.frappe-control input:focus,
+.frappe-control select:focus,
+.frappe-control textarea:focus {
+  border-color: var(--brand-accent) !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1) !important;
+  outline: none !important;
+}
+
+/* ─── STATUS BADGES ─────────────────────────────────────────── */
+.indicator,
+.indicator-pill,
+.badge {
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 3px 10px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  border: none !important;
+}
+
+.indicator.green,  .indicator-pill.green,  .badge.green  { background: #ECFDF5 !important; color: #059669 !important; }
+.indicator.red,    .indicator-pill.red,    .badge.red    { background: #FEF2F2 !important; color: #EF4444 !important; }
+.indicator.blue,   .indicator-pill.blue,   .badge.blue   { background: #EFF6FF !important; color: #2563EB !important; }
+.indicator.orange, .indicator-pill.orange, .badge.orange { background: #FFFBEB !important; color: #D97706 !important; }
+.indicator.yellow, .indicator-pill.yellow, .badge.yellow { background: #FFFBEB !important; color: #D97706 !important; }
+.indicator.gray,   .indicator-pill.gray,   .badge.gray   { background: #F1F5F9 !important; color: #94A3B8 !important; }
+
+/* ─── CARDS & WIDGETS ───────────────────────────────────────── */
+.widget,
+.dashboard-card,
+.card {
+  border-radius: 12px !important;
+  border: 1px solid var(--card-border) !important;
+  background: var(--card-bg) !important;
+  box-shadow: none !important;
+}
+
+/* ─── MODALS ────────────────────────────────────────────────── */
+.modal-content {
+  border-radius: 14px !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12) !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.modal-header { border-bottom: 1px solid #F1F5F9 !important; padding: 16px 20px !important; }
+.modal-title { font-family: 'Syne', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; color: #0F172A !important; }
+.modal-footer { border-top: 1px solid #F1F5F9 !important; padding: 12px 20px !important; }
+
+/* ─── TABLES ────────────────────────────────────────────────── */
+.table, table.table { font-family: 'DM Sans', sans-serif !important; font-size: 13px !important; }
+
+.table thead th {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #94A3B8 !important;
+  background: #F8FAFC !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+  padding: 10px 16px !important;
+}
+
+.table tbody td { padding: 11px 16px !important; color: #334155 !important; border-bottom: 1px solid #F8FAFC !important; }
+
+/* ─── PAGE CONTENT AREA ─────────────────────────────────────── */
+.page-content-wrapper,
+.layout-main-section-wrapper { background: var(--page-bg) !important; padding: 24px !important; }
+
+.layout-main-section { background: white !important; border-radius: 12px !important; border: 1px solid var(--card-border) !important; }
+
+/* ─── NOTIFICATIONS ─────────────────────────────────────────── */
+.notification-count { background: var(--brand-accent) !important; font-family: 'DM Sans', sans-serif !important; font-size: 10px !important; border-radius: 20px !important; }
+
+/* ─── SCROLLBARS ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }

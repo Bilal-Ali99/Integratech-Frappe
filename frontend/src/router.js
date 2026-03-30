@@ -41,10 +41,14 @@ const routes = [
     name: 'Permissions',
     component: () => import('@/pages/Dashboard.vue'), // placeholder
   },
+  {
+  path: '/:pathMatch(.*)*',
+  redirect: '/'
+  },
 ]
 
 let router = createRouter({
-  history: createWebHistory('/frontend'),
+  history: createWebHistory('/integratech/'),
   routes,
 })
 
